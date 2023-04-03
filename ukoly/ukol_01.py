@@ -40,3 +40,4 @@ if len(jmeno) > 5:
 else:
     print(jmeno.title(), prijmeni.title())
 
+
