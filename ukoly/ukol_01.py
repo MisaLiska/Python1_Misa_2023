@@ -31,9 +31,13 @@ jmeno_a_prijmeni = input("Zadej své jméno a příjmení: ")
 jmeno_prijmeni = jmeno_a_prijmeni.split(" ")
 jmeno = jmeno_prijmeni[0]
 prijmeni = jmeno_prijmeni[1]
-print(jmeno.upper(), prijmeni.upper())
-print(jmeno.lower(), prijmeni.lower())
-print(jmeno.title(), prijmeni.title())
+#to mě nenapadlo, to je jednodušší
+#print(jmeno.upper(), prijmeni.upper())
+#print(jmeno.lower(), prijmeni.lower())
+#print(jmeno.title(), prijmeni.title())
+print(jmeno_a_prijmeni.upper())
+print(jmeno_a_prijmeni.lower())
+print(jmeno_a_prijmeni.title())
 print(f"{jmeno[0].upper()}. {prijmeni[0].upper()}.")
 if len(jmeno) > 5:
     print(f"{jmeno[0].upper()}. {prijmeni.title()}")
