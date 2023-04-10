@@ -34,3 +34,4 @@ if soucastka in sklad:
         print(f"Zůstatek na skladě {sklad}")
 else:
     print(f"Bohužel, součástka {soucastka} není momentálně na skladě.")
+    
