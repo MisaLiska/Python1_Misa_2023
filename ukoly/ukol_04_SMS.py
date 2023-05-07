@@ -23,40 +23,41 @@
 # Nepovinný bonus 2
 # Přidej svým funkcím typování, aby bylo jasné, jaký typy mají parametry tvých funkcí a jaká je návratová hodnota tvých funkcí.
 
-def zadej_cislo(a):
+def kontrola_cisla(vstup:str) -> bool:
     """
-    Popis funkce
+    Funkce detekuje spravny format zadaneho cisla pro odeslani sms.
+    Funkce vraci False / True
     """
-    if int(a):
-        return("OK")
-    else:
-        return("bad")
-    # if a[0:4] == "+420":
-    #     return "13"
-    # else:
-    #     return "9"
+    cislo:str = ""
+    cislo = vstup.replace(" ", "")
 
-def cena_sms(text):
+    if len(cislo) == 9:
+        return True
+    elif len(cislo) == 13:
+        return True
+    else:
+        return False
+
+def cena_sms(text:str) -> float:
     """
-    Popis funkce
+    Funkce spocita delku zpravy a rozdeli na zpravy po 180 znacich.
+    Funkce vraci pocet zprav.
     """
-    pocet_znaku = len(text)
-    pocet_zprav = 0
+    pocet_znaku:int = len(text)
+    pocet_zprav:int = 0
     if pocet_znaku < 180:
         pocet_zprav = 1
     elif pocet_znaku % 180 == 0:
         pocet_zprav = pocet_znaku / 180
     else:
         pocet_zprav = (pocet_znaku // 180) + 1
-    cena = pocet_zprav * 2.5
+    cena:float = pocet_zprav * 2.5
     return cena
 
-cislo_sms = input("Zadej telefonní číslo: ")
-if cislo_sms.isdigit:
-    text_sms = input("Zadej text: ")
+cislo_sms:str = input("Zadej telefonní číslo: ")
+if kontrola_cisla(cislo_sms):
+    text_sms:str = input("Zadej text: ")
+    print(f"Vaše zpráva byla odeslána, cena je {cena_sms(text_sms)} Kč")
 else:
     print("Špatný formát čísla")
-
-print(f"Vaše zpráva byla odeslána, cena je {cena_sms(text_sms)} Kč")
-
 
