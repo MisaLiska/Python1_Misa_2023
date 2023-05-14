@@ -21,3 +21,39 @@
 
 # Otestuj, že program nedovolí půjčit stejné auto dvakrát.
 
+# Nepovinný bonus
+# Přidej třídě Auto metodu vrat_auto(), která bude mít (krom obligátního self) 2 parametry, a to je stav tachometru při vrácení a počet dní, po které zákazník auto používal. Ulož stav tachometru do atributu objektu. Nastav vozidlo jako volné.
+
+# Dále ve funkci vypočti cenu za půjčení. Cena je 400 Kč na den, pokud měl zákazník celkem auto méně než týden, a 300 Kč na den, pokud měl zákazník auto déle. Cena je stejná pro obě auta. Vlož cenu do nějakého informativního textu a ten vrať pomocí klíčového slova return.
+
+class Auto: # definice tridy
+    def __init__(self, rz, model, km): # konstruktor tridy - specialni metoda
+        self.rz = km
+        self.model = model
+        self.km = km
+        self.volne = True
+  
+    def pujc_auto(self):
+        if self.volne:
+            self.volne = False
+            print("Potvrzuji zapůjčení vozidla")
+        else:
+            print("Bohužel, požadované vozidlo není k dispozici")
+
+    def get_info(self) -> str:
+        return f"Automobil {self.model}, RZ {self.rz}, stav km {self.km}."
+
+auto_1 = Auto("4A2 3020", "Peugeot 403 Cabrio", "47534")
+auto_2 = Auto("1P3 4747", "Škoda Octavia", "41253")
+
+auto_2.pujc_auto()
+
+pozadavek_zapujc = input("Jaký vůz si přejete zapůjčit? (Škoda / Peugeot)? ") 
+# v reálné aplikaci by byl vstup zkontrolován regexem
+if pozadavek_zapujc == "Škoda":
+    auto_1.pujc_auto()
+elif pozadavek_zapujc == "Peugeot":
+    auto_2.pujc_auto()
+else:
+    print("Bohužel, takový vůz nemáme v autoparku")
+
