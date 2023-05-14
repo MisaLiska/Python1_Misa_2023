@@ -40,7 +40,7 @@ test_username = regex_username.fullmatch(username)
 
 if test_username:
     useremail = input("Zadej svůj email: ")
-    regex_useremail = re.compile(r"([A-Za-z0-9]+[.-_+])*[A-Za-z0-9-_+\"]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+") # Proč vymejšlet kolo? Tady pomohl internet. Není to 100%, ale 99% asi teď stačí :)
+    regex_useremail = re.compile(r"([A-Za-z0-9]+[.-_+])*[A-Za-z0-9-_+\"]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+")
     test_useremail = regex_useremail.fullmatch(useremail)
 
     if test_useremail:
