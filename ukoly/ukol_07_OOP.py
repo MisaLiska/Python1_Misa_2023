@@ -51,9 +51,9 @@ auto_2.pujc_auto()
 pozadavek_zapujc = input("Jaký vůz si přejete zapůjčit? (Škoda / Peugeot)? ") 
 # v reálné aplikaci by byl vstup zkontrolován regexem
 if pozadavek_zapujc == "Škoda":
-    auto_1.pujc_auto()
-elif pozadavek_zapujc == "Peugeot":
     auto_2.pujc_auto()
+elif pozadavek_zapujc == "Peugeot":
+    auto_1.pujc_auto()
 else:
     print("Bohužel, takový vůz nemáme v autoparku")
 
