@@ -36,24 +36,32 @@ class Auto: # definice tridy
     def pujc_auto(self):
         if self.volne:
             self.volne = False
-            print("Potvrzuji zapůjčení vozidla")
+            print("Potvrzuj zapůjčení vozidla")
         else:
             print("Bohužel, požadované vozidlo není k dispozici")
 
     def get_info(self) -> str:
         return f"Automobil {self.model}, RZ {self.rz}, stav km {self.km}."
 
+    def vrat_auto(self, pocet_dnu, stav_km):
+        self.pocet_dnu = pocet_dnu
+        self.km = stav_km
+        self.volne = True
+
 auto_1 = Auto("4A2 3020", "Peugeot 403 Cabrio", "47534")
 auto_2 = Auto("1P3 4747", "Škoda Octavia", "41253")
 
-auto_2.pujc_auto()
-
 pozadavek_zapujc = input("Jaký vůz si přejete zapůjčit? (Škoda / Peugeot)? ") 
-# v reálné aplikaci by byl vstup zkontrolován regexem
+
 if pozadavek_zapujc == "Škoda":
+    print(auto_2.get_info())
     auto_2.pujc_auto()
 elif pozadavek_zapujc == "Peugeot":
+    print(auto_1.get_info())
     auto_1.pujc_auto()
 else:
     print("Bohužel, takový vůz nemáme v autoparku")
+
+# dodělat bonus
+# vraceni_auta = 
 
